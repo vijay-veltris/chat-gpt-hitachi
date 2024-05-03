@@ -38,10 +38,10 @@ MINIMUM_SUPPORTED_AZURE_OPENAI_PREVIEW_API_VERSION = "2024-02-15-preview"
 load_dotenv()
 
 # UI configuration (optional)
-UI_TITLE = os.environ.get("UI_TITLE") or "Contoso"
+UI_TITLE = os.environ.get("UI_TITLE") or "PM Domain"
 UI_LOGO = os.environ.get("UI_LOGO")
 UI_CHAT_LOGO = os.environ.get("UI_CHAT_LOGO")
-UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or "Start chatting"
+UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or "PM Assistant"
 UI_CHAT_DESCRIPTION = (
     os.environ.get("UI_CHAT_DESCRIPTION")
     or "This chatbot is configured to answer your questions"
@@ -258,10 +258,10 @@ frontend_settings = {
     "auth_enabled": AUTH_ENABLED,
     "feedback_enabled": AZURE_COSMOSDB_ENABLE_FEEDBACK and CHAT_HISTORY_ENABLED,
     "ui": {
-        "title": UI_TITLE,
+        "title": "PM Domain",
         "logo": UI_LOGO,
         "chat_logo": UI_CHAT_LOGO or UI_LOGO,
-        "chat_title": UI_CHAT_TITLE,
+        "chat_title": "PM Assistant",
         "chat_description": UI_CHAT_DESCRIPTION,
         "show_share_button": UI_SHOW_SHARE_BUTTON,
     },
@@ -834,11 +834,13 @@ async def send_chat_request(request):
 
     try:
         azure_openai_client = init_openai_client()
+        print("endpointurl",AZURE_OPENAI_ENDPOINT)
         raw_response = await azure_openai_client.chat.completions.with_raw_response.create(**model_args)
         response = raw_response.parse()
         apim_request_id = raw_response.headers.get("apim-request-id") 
     except Exception as e:
-        logging.exception("Exception in send_chat_request")
+        logging.exception("Exception in send_chat_request:",AZURE_OPENAI_ENDPOINT)
+        logging.exception("endpoint url",AZURE_OPENAI_ENDPOINT)
         raise e
 
     return response, apim_request_id
