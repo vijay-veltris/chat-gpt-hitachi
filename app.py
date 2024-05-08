@@ -38,10 +38,10 @@ MINIMUM_SUPPORTED_AZURE_OPENAI_PREVIEW_API_VERSION = "2024-02-15-preview"
 load_dotenv()
 
 # UI configuration (optional)
-UI_TITLE = os.environ.get("UI_TITLE") or "PM Domain"
+UI_TITLE = os.environ.get("UI_TITLE") or " "
 UI_LOGO = os.environ.get("UI_LOGO")
 UI_CHAT_LOGO = os.environ.get("UI_CHAT_LOGO")
-UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or "PM Assistant"
+UI_CHAT_TITLE = os.environ.get("UI_CHAT_TITLE") or " "
 UI_CHAT_DESCRIPTION = (
     os.environ.get("UI_CHAT_DESCRIPTION")
     or "This chatbot is configured to answer your questions"
@@ -258,10 +258,10 @@ frontend_settings = {
     "auth_enabled": AUTH_ENABLED,
     "feedback_enabled": AZURE_COSMOSDB_ENABLE_FEEDBACK and CHAT_HISTORY_ENABLED,
     "ui": {
-        "title": "PM Domain",
+        "title": " ",
         "logo": UI_LOGO,
         "chat_logo": UI_CHAT_LOGO or UI_LOGO,
-        "chat_title": "PM Assistant",
+        "chat_title": " ",
         "chat_description": UI_CHAT_DESCRIPTION,
         "show_share_button": UI_SHOW_SHARE_BUTTON,
     },

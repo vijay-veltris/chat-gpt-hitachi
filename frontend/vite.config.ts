@@ -11,8 +11,8 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/ask': 'http://localhost:5000',
-      '/chat': 'http://localhost:5000'
+      '/ask': 'http://localhost3000',
+      '/chat': 'http://localhost3000'
     }
   }
 })

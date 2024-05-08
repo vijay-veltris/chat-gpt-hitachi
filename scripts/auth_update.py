@@ -15,7 +15,7 @@ def update_redirect_uris(credential, app_id, uri):
         json={
             "web": {
                 "redirectUris": [
-                    "http://localhost:5000/.auth/login/aad/callback",
+                    "http://localhost3000/.auth/login/aad/callback",
                     f"{uri}/.auth/login/aad/callback",
                 ]
             }

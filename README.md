@@ -44,7 +44,7 @@ Please see the [section below](#add-an-identity-provider) for important informat
 
 2. Start the app with `start.cmd`. This will build the frontend, install backend dependencies, and then start the app. Or, just run the backend in debug mode using the VSCode debug configuration in `.vscode/launch.json`.
 
-3. You can see the local running app at http://0.0.0.0:5000.
+3. You can see the local running app at http://127.0.0.13000.
 
 #### Local Setup: Chat with your data (Preview)
 [More information about Azure OpenAI on your data](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/use-your-data)
@@ -73,7 +73,7 @@ Please see the [section below](#add-an-identity-provider) for important informat
     - `AZURE_OPENAI_EMBEDDING_NAME`
 
 3. Start the app with `start.cmd`. This will build the frontend, install backend dependencies, and then start the app. Or, just run the backend in debug mode using the VSCode debug configuration in `.vscode/launch.json`.
-4. You can see the local running app at http://0.0.0.0:5000.
+4. You can see the local running app at http://127.0.0.13000.
 
 #### Local Setup: Enable Chat History
 To enable chat history, you will need to set up CosmosDB resources. The ARM template in the `infrastructure` folder can be used to deploy an app service and a CosmosDB with the database and container configured. Then specify these additional environment variables: 
@@ -82,7 +82,7 @@ To enable chat history, you will need to set up CosmosDB resources. The ARM temp
 - `AZURE_COSMOSDB_CONVERSATIONS_CONTAINER`
 - `AZURE_COSMOSDB_ACCOUNT_KEY`
 
-As above, start the app with `start.cmd`, then visit the local running app at http://0.0.0.0:5000. Or, just run the backend in debug mode using the VSCode debug configuration in `.vscode/launch.json`.
+As above, start the app with `start.cmd`, then visit the local running app at http://127.0.0.13000. Or, just run the backend in debug mode using the VSCode debug configuration in `.vscode/launch.json`.
 
 #### Local Setup: Enable Message Feedback
 To enable message feedback, you will need to set up CosmosDB resources. Then specify these additional environment variable:

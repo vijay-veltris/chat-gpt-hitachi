@@ -10,7 +10,7 @@ import { isEmpty } from "lodash";
 import DOMPurify from 'dompurify';
 
 import styles from "./Chat.module.css";
-import Contoso from "../../assets/Hitachi-energy-mark.svg";
+import Contoso from "../../assets/OEblack-removebg-preview.png";
 import { XSSAllowTags } from "../../constants/xssAllowTags";
 
 import {
@@ -106,7 +106,7 @@ const Chat = () => {
       return;
     }
     const userInfoList = await getUserInfo();
-    if (userInfoList.length === 0 && window.location.hostname !== "0.0.0.0") {
+    if (userInfoList.length === 0 && window.location.hostname !== "127.0.0.1") {
       setShowAuthMessage(false);
     }
     else {
